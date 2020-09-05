@@ -1,3 +1,8 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
 //create a linked list 1,2,3.
 struct Node 
 {
@@ -6,6 +11,8 @@ Node* next;
     }
 
 Node* head;
+int main()
+{
 head = NULL;
 
 Node* temp = new Node();
@@ -38,3 +45,4 @@ while(temp1->next != NULL)
  temp2= tem2->next;
  }
  temp2->next = temp;
+}
