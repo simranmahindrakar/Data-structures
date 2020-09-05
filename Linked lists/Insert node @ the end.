@@ -1,0 +1,40 @@
+//create a linked list 1,2,3.
+struct Node 
+{
+int data;
+Node* next;
+    }
+
+Node* head;
+head = NULL;
+
+Node* temp = new Node();
+temp->data = 1;
+temp->next = NULL;
+head = temp;
+
+//add number 2 
+Node* temp = new Node();
+temp->data = 2;
+temp->next = NULL;
+
+//Traverse the list to link the elements
+Node* temp1 = head;
+while(temp1->next != NULL)
+{
+  temp1 = temp1->next;
+ }
+ temp1->next = temp;
+ 
+ //Add number 3
+ 
+ Node* temp = new Node();
+ temp->data = 3;
+ temp->next = NULL;
+ 
+ Node* temp2 = head;
+ while(temp2->next != NULL)
+ {
+ temp2= tem2->next;
+ }
+ temp2->next = temp;
