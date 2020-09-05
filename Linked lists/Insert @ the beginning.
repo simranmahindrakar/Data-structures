@@ -1,0 +1,39 @@
+#inlcude <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+int data;
+Node* next;
+}
+void Insert (int x)
+{
+Node* temp = new Node();
+temp->data = x;
+temp->next = head;   //head stores the address of the first element in the list. so first we copy that into the newly made node. so that the new node points to it
+head = temp;         //we store the address of new node in head. so head points at the new first node.
+}
+
+void Print () {
+Node* temp = head;
+cout<<"List is:";
+while(temp != NULL)
+{
+cout<<temp->data<<" ";
+}
+cout<<"\n";
+
+Node* head;
+int main()
+{
+head = NULL;
+
+cout<<"How many numbers?"<<endl;
+int n,x;
+cin>>n;
+for (int i=0; i<n; i++)
+{
+cin>>x;
+Insert(x);
+Print();
+}
+}
