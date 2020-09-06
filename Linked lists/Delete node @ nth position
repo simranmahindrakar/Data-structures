@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+int data;
+Node* next;
+}
+void Insert(int data) //alwyas at the end
+{
+Node* temp = new Node();
+temp->data = data;
+temp->next = NULL;
+Node* temp1 = head;
+while (temp1 != NULL)
+{
+temp1 = temp1->next;
+}
+temp1->next = temp;
+
+void Delete (int n)
+{
+Node* temp1 = head;
+if(n == 1)
+{
+head = temp1->next;  //adjust link and delete the node
+delete temp1;
+return;
+}
+//else go to (n-1)th node and adjust links
+for(int i=0; i<n-2; i++)
+{
+temp1= temp1->next;
+} //now temp1 points to (n-1)th node
+Node* temp2 = temp1->next; //temp2 points to nth node which we want to delete
+temp1->next = temp2->next;  //temp1 now points to the (n+1)th node.
+delete temp2;
+}
+
+void Print() 
+{
+Node* temp = head;
+while(temp !=NULL)
+{
+cout<<temp->data<<endl;
+temp=temp->next;
+}
+}
+Node* head; //creating pointer to node //global so it can be accessed by all functions
+
+int main()
+{
+head = NULL;
+Insert(1);
+Insert(2);
+Insert(3);
+Insert(4);
+Insert(5);
+Print();
+Delete(1); //position
+}
+
