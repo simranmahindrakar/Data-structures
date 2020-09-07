@@ -6,17 +6,26 @@ int data;
 Node* next;
 }
 
-void Print (Node* p) {
-if (p == NULL)
+void Print (Node* head) {
+if (head == NULL) //exit condition for recursion
 {
 return;
 }
 
-cout<<p->data<<endl;
-Print(p->next);
+cout<<head->data<<endl;  //First print the data
+Print(head->next);       //recursive call;
 }
 
 
+void ReversePrint (Node* head)
+{
+if (head == NULL)
+{
+return;
+}
+ReversePrint(head->next);  
+cout<<head->data<<" ";
+}
 
 
 
