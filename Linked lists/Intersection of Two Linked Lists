@@ -1,0 +1,28 @@
+Method 1: Brute force    Time O(nm)    Space O(1)
+**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode* pa = headA;
+        ListNode* pb;
+        while(pa != NULL)   //for each node in List A
+        {
+            for(pb=headB; pb!=NULL; pb=pb->next)    //iterate through the whole of List B and check if any node in B coincides with the current node in A.
+            {
+                if(pb == pa)
+                    return pa;
+            }
+            pa=pa->next;
+        }
+        return NULL;
+        
+        
+    }
+};
